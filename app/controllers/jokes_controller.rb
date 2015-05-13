@@ -18,7 +18,26 @@ class JokesController < ApplicationController
     end
   end
 
+  def update
+    @joke = Joke.find_by(id: params[:id])
+
+    if params[:vote] == "up"
+      @joke.vote_up
+      new_joke
+    elsif params[:vote] == "down"
+      @joke.vote_down
+      new_joke
+    end
+
+  end
+
   private
+
+  def new_joke
+    respond_to do |format|
+      format.json { render json: Joke.all.sample }
+    end
+  end
 
   def joke_params
     params.require(:joke).permit(:body)

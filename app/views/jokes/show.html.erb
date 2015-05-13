@@ -1,3 +1,15 @@
-Joke: <%= @joke.body %>
-Rating: <%= @joke.rating %>
+<div class="joke" id="<%= @joke.id %>">
+  Joke: <%= @joke.body %><br>
+  Rating: <%= @joke.rating %><br>
+</div>
+
+<div id="funny">
+Funny:
+<%= check_box_tag "" %>
+</div>
+
+<div id="not-funny">
+Not funny:
+<%= check_box_tag  ""%>
+</div>
 
