@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20150513004811) do
   enable_extension "plpgsql"
 
   create_table "jokes", force: :cascade do |t|
-    t.integer  "rating"
+    t.integer  "rating",     default: 0
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
