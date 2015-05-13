@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   get "/rate", to: "jokes#show"
 
   post "/up", to: "jokes#up"
+
+  namespace :api do
+    namespace :v1 do
+      resources :jokes
+    end
+  end
 end
