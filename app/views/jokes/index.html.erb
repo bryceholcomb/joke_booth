@@ -1,0 +1,5 @@
+<ul>
+  <% @jokes.each do |joke| %>
+    <li><strong><%= joke.body %></strong> Rating: <%= joke.rating %></li>
+<% end %>
+</ul>

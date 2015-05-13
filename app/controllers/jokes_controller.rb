@@ -1,6 +1,6 @@
 class JokesController < ApplicationController
   def index
-    @jokes = Joke.order(:rating).take(10)
+    @jokes = Joke.order(:rating).reverse.take(10)
   end
 
   def show
@@ -12,9 +12,15 @@ class JokesController < ApplicationController
   end
 
   def create
-    @joke = Joke.new
+    @joke = Joke.new(joke_params)
     if @joke.save
-      redirect_to joke_path(@joke.id), alert: "Your joke has been created"
+      redirect_to jokes_path, alert: "Your joke has been created"
     end
+  end
+
+  private
+
+  def joke_params
+    params.require(:joke).permit(:body)
   end
 end
