@@ -1,14 +1,15 @@
+
 <div class="joke" id="<%= @joke.id %>">
   Joke: <%= @joke.body %><br>
   Rating: <%= @joke.rating %><br>
 </div>
 
+<div class="buttons">
 <div id="funny">
-  <%= link_to "Funny", joke_path(@joke, vote: "up"), method: "PUT" %>
+  <%= link_to "Yay", joke_path(@joke, vote: "up"), method: "PUT", class: "btn1" %>
 </div>
 
 <div id="not-funny">
-  <%= link_to "Not Funny", joke_path(@joke, vote: "down"), method: "PUT" %>
+  <%= link_to "Nay", joke_path(@joke, vote: "down"), method: "PUT", class: "btn2" %>
 </div>
-
-<br>Button back to <%= link_to 'JokeBooth', home_path %>
+</div>

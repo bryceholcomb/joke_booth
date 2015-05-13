@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container">
 
   <div class="messsages">
     <% flash.each do |name, msg| %>
@@ -17,8 +17,12 @@
   </div>
 
   <%= yield %>
+  <footer>
+    <br>Back to <%= link_to 'JokeBooth', home_path %>
+  </footer>
 
 </div>
+
 
 </body>
 </html>

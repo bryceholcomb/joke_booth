@@ -1,6 +1,7 @@
 class Seed
 
   def call
+    Joke.delete_all
     create_jokes
   end
 

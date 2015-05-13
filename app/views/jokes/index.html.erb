@@ -1,7 +1,9 @@
+
+
 <h1>Top 10 hottest jokes</h1>
 
-<ul>
+<ul class="joke_list">
   <% @jokes.each do |joke| %>
-    <li><%= joke.rating %> Upvotes! | <strong><%= joke.body %></strong> </li>
+    <li><h3><%= joke.rating %> Upvotes!</h3><br/><%= joke.body %> </li>
 <% end %>
 </ul>
