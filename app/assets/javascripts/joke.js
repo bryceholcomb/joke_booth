@@ -15,10 +15,9 @@ $(document).ready(function() {
 function voteUp(jokeId) {
   $.ajax({
     url: "/jokes/" + jokeId,
-    method: "PUT",
     data: { vote: "up" },
     success: function(joke) {
-      $(".joke").children().remove();
+      alert("success");
     }
   });
 }

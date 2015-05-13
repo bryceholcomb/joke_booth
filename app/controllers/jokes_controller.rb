@@ -23,10 +23,10 @@ class JokesController < ApplicationController
 
     if params[:vote] == "up"
       @joke.vote_up
-      new_joke
+      redirect_to rate_path
     elsif params[:vote] == "down"
       @joke.vote_down
-      new_joke
+      redirect_to rate_path
     end
 
   end

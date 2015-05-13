@@ -4,19 +4,11 @@
 </div>
 
 <div id="funny">
-Funny:
-<%= check_box_tag "" %>
+  <%= link_to "Funny", joke_path(@joke, vote: "up"), method: "PUT" %>
 </div>
 
 <div id="not-funny">
-Not funny:
-<%= check_box_tag  ""%>
+  <%= link_to "Not Funny", joke_path(@joke, vote: "down"), method: "PUT" %>
 </div>
 
-Click to see dirty jokes
-
-Button back to <%= link_to 'JokeBooth', home_path %>
-
-Swipe left: that joke sucked
-
-Swipe right: LOLs
+<br>Button back to <%= link_to 'JokeBooth', home_path %>
